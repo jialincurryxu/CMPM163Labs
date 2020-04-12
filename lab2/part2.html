@@ -36,13 +36,13 @@
             scene.add(ambLight);
 
             // helper function of light pos
-            var sphereSize = 1;
-            var pointLightHelper = new THREE.PointLightHelper( light, sphereSize );
-            scene.add( pointLightHelper );
-            var subpointLightHelper = new THREE.PointLightHelper( subLight, sphereSize );
-            scene.add( subpointLightHelper );
-            var ambpointLightHelper = new THREE.PointLightHelper( ambLight, sphereSize );
-            scene.add( ambpointLightHelper );
+            // var sphereSize = 1;
+            // var pointLightHelper = new THREE.PointLightHelper( light, sphereSize );
+            // scene.add( pointLightHelper );
+            // var subpointLightHelper = new THREE.PointLightHelper( subLight, sphereSize );
+            // scene.add( subpointLightHelper );
+            // var ambpointLightHelper = new THREE.PointLightHelper( ambLight, sphereSize );
+            // scene.add( ambpointLightHelper );
 
             // Load the 3d objs
             var loader = new THREE.GLTFLoader();
@@ -67,7 +67,6 @@
 
             loader.load('books.glb', function (gltf) {
                 scene.add(gltf.scene);
-                // gltf.scene.rotation.y = -0.5;
                 gltf.scene.position.x = 70;
                 gltf.scene.position.z = -20;
                 gltf.scene.rotation.y= -0.5;
