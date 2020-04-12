@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 2: Intro to Three.js Part 2</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+        <script src="../three.js-master/build/three.js"></script>
+		<script src="../three.js-master/examples/js/loaders/GLTFLoader.js"></script>
+		<script>
+            // Basic set up
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, 
+                window.innerWidth/window.innerHeight, 0.1, 1000);
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            camera.position.z = 200;
+            camera.position.y = 50;
+
+            // Add the light
+            var light = new THREE.PointLight(0xffcccc, 3, 1000);
+            light.position.set(-70, 80, 50);
+            scene.add(light);
+
+            var subLight = new THREE.PointLight(0x66ccff, 2, 1000);
+            subLight.position.set(30, -20, -20);
+            scene.add(subLight);
+
+            var ambLight = new THREE.PointLight(0xfffff, 1, 150);
+            ambLight.position.set(0, 0, 200);
+            scene.add(ambLight);
+
+            // helper function of light pos
+            var sphereSize = 1;
+            var pointLightHelper = new THREE.PointLightHelper( light, sphereSize );
+            scene.add( pointLightHelper );
+            var subpointLightHelper = new THREE.PointLightHelper( subLight, sphereSize );
+            scene.add( subpointLightHelper );
+            var ambpointLightHelper = new THREE.PointLightHelper( ambLight, sphereSize );
+            scene.add( ambpointLightHelper );
+
+            // Load the 3d objs
+            var loader = new THREE.GLTFLoader();
+            loader.load('dog.glb', function (gltf) {
+                scene.add(gltf.scene);
+                gltf.scene.position.x = -50;
+            }, function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+            }, function (error) {
+                console.error(error);
+            });
+
+            loader.load('cat.glb', function (gltf) {
+                scene.add(gltf.scene);
+                gltf.scene.rotation.y = -0.5;
+                gltf.scene.position.y = -15;
+            }, function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+            }, function (error) {
+                console.error(error);
+            });
+
+            loader.load('books.glb', function (gltf) {
+                scene.add(gltf.scene);
+                // gltf.scene.rotation.y = -0.5;
+                gltf.scene.position.x = 70;
+                gltf.scene.position.z = -20;
+                gltf.scene.rotation.y= -0.5;
+
+                var scaleVec = 3;
+                gltf.scene.scale.x = scaleVec;
+                gltf.scene.scale.y = scaleVec;
+                gltf.scene.scale.z = scaleVec;
+            }, function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+            }, function (error) {
+                console.error(error);
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+            }
+            animate();
+
+
+		</script>
+	</body>
+</html>
