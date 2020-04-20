@@ -14,6 +14,7 @@
             // load the shaders 
             THREE.Cache.enabled = true;
             var count = 0;
+            var count2 = 0;
             var loader = new THREE.FileLoader();
             var fshader, vshader;
 
@@ -50,6 +51,43 @@
                 function (err) {
                     console.error('An error happened');
                 });
+            
+
+            var ownfshader, ownvshader;
+
+            loader.load('shaders/ownVShader.vert',
+                // onLoad callback
+                function (data) {
+                    console.log(data); // output the text to the console
+                    ownvshader = data;
+                    count2 += 1;
+                    addCoolCube2(); // we will write this method
+                },
+                // onProgress callback
+                function (xhr) {
+                    console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+                },
+                // onError callback
+                function (err) {
+                    console.error('An error happened');
+                });
+
+            loader.load('shaders/ownFShader.frag',
+                // onLoad callback
+                function (data) {
+                    console.log(data); // output the text to the console
+                    ownfshader = data;
+                    count2 += 1;
+                    addCoolCube2(); // we will write this method
+                },
+                // onProgress callback
+                function (xhr) {
+                    console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+                },
+                // onError callback
+                function (err) {
+                    console.error('An error happened');
+                });
 
 			// setup the scene
             var scene = new THREE.Scene();
@@ -70,9 +108,9 @@
 
             // add another cube 
             var geometry2 = new THREE.BoxGeometry();
-            var material2 = new THREE.MeshLambertMaterial( {
-								color: 0x66ccff,
-								reflectivity: 5
+            var material2 = new THREE.MeshToonMaterial( {
+                                color: 0x66ccff,
+                                shininess: 100
 							} )
             var cube2 = new THREE.Mesh( geometry2, material2 );
             cube2.position.x = 2;
@@ -119,6 +157,10 @@
                     geometry1.rotateY(0.01);
                 }
 
+                if(geometry4) {
+                    geometry4.rotateX(0.01);
+                    geometry4.rotateY(0.01);
+                }
 
 				renderer.render(scene, camera);
 			}
@@ -144,9 +186,35 @@
                         precision: "mediump"});
 
                     mesh1 = new THREE.Mesh(geometry1, material1);
-                    mesh1.position.x = 2;
+                    mesh1.position.x = 1;
                     mesh1.position.y= -1.5;
                     scene.add(mesh1);
+                }	
+            }
+
+            var geometry4, material4, mesh2;
+            function addCoolCube2() {
+                if(count2 == 2) {
+                    let uniforms = {
+                        colorC: {type: 'vec3', value: new 
+                            THREE.Color(0xff0000)},
+                        colorD: {type: 'vec3', value: new 
+                            THREE.Color(0x00ff00)},
+                        colorE: {type: 'vec3', value: new 
+                            THREE.Color(0x0000ff)}
+                    };
+
+                    geometry4 = new THREE.BoxGeometry(1, 1, 1);
+                    material4 =  new THREE.ShaderMaterial({
+                        uniforms: uniforms,
+                        fragmentShader: ownfshader,
+                        vertexShader: ownvshader,
+                        precision: "mediump"});
+
+                    mesh2 = new THREE.Mesh(geometry4, material4);
+                    mesh2.position.x = -1;
+                    mesh2.position.y= -1.5;
+                    scene.add(mesh2);
                 }	
             }
 
