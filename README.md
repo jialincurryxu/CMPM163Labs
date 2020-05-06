@@ -28,3 +28,14 @@ How I solved Cube5:
 In the vertex shader I used for cube5, I make uVu = uv *2.0, which shinks the whole uv coordinate system by 1/2 and make it only covers 1/4 of the surface. Then in my fragment shader I used gl_FragColor = texture2D(texture2, mod (vUv,1.0)) so when the shader is trying to color the place where the uVu cannot reach, it will warp correctly.
 
 Video: https://drive.google.com/open?id=1PJJwNybhlolk2f450P0ukQMKfXdzyOar
+
+# Lab5 
+Part 2a: 
+Video: https://drive.google.com/open?id=1VoBngNZ59c2tZ0zdZeUV-aA4dTnnKk6u
+
+Part 2b:
+Video: https://drive.google.com/open?id=11GniFfoS1oc9UQcHTTv0iVJdwOeAsa1q
+
+Part 2b modify:
+The way I modify the particle system is to combine the previous two parts and first populate the whole screen with moving particles, and when the particles hit the boundary I set, their position will reset to the mouse and there will be a little particle fountain where the mouse is pointing. I also replaced the texture for the particles.
+Video: https://drive.google.com/open?id=1i6Cw49kvI1z96Q0NMW5khVcvozy4UkT4

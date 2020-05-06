@@ -74,7 +74,15 @@
                 geo.vertices.push(particle.position)
             }
 
-            const mat = new THREE.PointsMaterial({color:0xffffff,size: 0.5});
+            const mat = new THREE.ParticleBasicMaterial({
+                color: 0xFFFFFF,
+                size: 5,
+                map: THREE.ImageUtils.loadTexture(
+                    "particle.png"
+                ),
+                blending: THREE.AdditiveBlending,
+                transparent: true
+            });
             mesh = new THREE.Points(geo,mat);
             mesh.position.z = 0;
             scene.add(mesh);
@@ -83,8 +91,8 @@
                 particles.forEach(p => {
                     p.velocity.add(p.acceleration);
                     p.position.add(p.velocity);
-                    if (p.position.y > window.innerHeight / 2 || p.position.y < -window.innerHeight / 2 ||
-                        p.position.x > window.innerWidth / 2 || p.position.x < -window.innerWidth / 2){
+                    if (p.position.y > window.innerHeight / 3 || p.position.y < -window.innerHeight / 3 ||
+                        p.position.x > window.innerWidth / 3 || p.position.x < -window.innerWidth / 3){
                         p.position.x = mouseX / 15;
                         p.position.y = - mouseY / 15;
                         p.velocity = 
