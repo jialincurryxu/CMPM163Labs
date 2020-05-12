@@ -8,7 +8,7 @@ Area light: Shine in all direction uniformly from one side of a defined rectangl
 Materials & The Standard Shader:
 I find the picture of a towel online, and imprt into the NVIDIA software to convert it into the normal map of the picture, then import both the texture and the normal map into the Unity. Then I put then both into a material, and adjust the metalic value to 0 and the source to albedoi alpha to make the materila look not so shiny. 
 ![](towel.jpg)
-The towel/n
+The towel\
 ![](material.png)
 The material in Unity
 
