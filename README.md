@@ -2,20 +2,20 @@
 Work for Game Graphics and Real-Time Rendering at UCSC Spring 20
 By Jialin(Curry) Xu
 
-# Lab2
+## Lab2
 Part 1 link: https://drive.google.com/open?id=1BDhBHd_NgVBAyQNoYGIJVo6yeKxpijSx
 
 Part 2: 
 ![](lab2/part2.png)
 
-# Lab3
+## Lab3
 On the top roll are the cubes made with THREE.js library materials, from left to right are: MeshPhysicalMaterial(with modify of metalness, roughness, clearcoat, clearcoatRoughness and reflectivity), MeshPhongMaterial(the one in doc), MeshToonMaterial(with modify of color and shininess)
 
 On the bottom roll are the cubes I made with custom shaders. The left one is an interpolation between red, green and blue. I was trying to make the rainbow effect but no success there. The one on the right is the one I made following the doc.
 
 Video: https://drive.google.com/open?id=1F2C6pqBcxOd7lEEEZVICbbpeDR9draTm
 
-# Lab4
+## Lab4
 Answer to 24:
 a) The formula should be: u value of uv coordinate * width of texture size (u * 8) 
 b) The formula should be: v value of uv coordinate * height of texture size (v * 8) 
@@ -29,7 +29,7 @@ In the vertex shader I used for cube5, I make uVu = uv *2.0, which shinks the wh
 
 Video: https://drive.google.com/open?id=1PJJwNybhlolk2f450P0ukQMKfXdzyOar
 
-# Lab5 
+## Lab5 
 Part 2a: 
 Video: https://drive.google.com/open?id=1VoBngNZ59c2tZ0zdZeUV-aA4dTnnKk6u
 
@@ -44,8 +44,8 @@ Unity project:
 I modified the track with a more bunpy one, switch the texture for the first tree on the right to a rock texture and added some buildings into the scene. Also I add in some speed boost.
 Video: https://drive.google.com/open?id=1Gze1mhdnvJl3OEcvVZ53cSlaAQeKfx5s
 
-# Lab 6
-## Unity
+## Lab 6
+### Unity
 Lighting Overview & Lights:
 Point light: Act like a light bulb, sends light out in all directions equally. It light up the scebe based on the location of the point light, the rotation of the light doesn't matter. 
 Directional light: Act like the sun. Lights up all the objects in the scene, based on the direction of the light set by the rotation of the directional light, position doesn't matter. 
@@ -68,7 +68,7 @@ Skybox in Unity is the texture drawn behind all the object in the scene to repre
 And this is the final result\
 ![](lab6/unity_shot.png)
 
-## Shadertoy
+### Shadertoy
 First screenshot of step13:\
 ![](lab6/shadertoy.png)
 
