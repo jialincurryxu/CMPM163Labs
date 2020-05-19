@@ -1,4 +1,4 @@
-# Lab 6
+# Lab6
 ## Unity
 Lighting Overview & Lights:
 Point light: Act like a light bulb, sends light out in all directions equally. It light up the scebe based on the location of the point light, the rotation of the light doesn't matter. 

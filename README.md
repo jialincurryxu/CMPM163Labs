@@ -44,7 +44,7 @@ Unity project:
 I modified the track with a more bunpy one, switch the texture for the first tree on the right to a rock texture and added some buildings into the scene. Also I add in some speed boost.
 Video: https://drive.google.com/open?id=1Gze1mhdnvJl3OEcvVZ53cSlaAQeKfx5s
 
-## Lab 6
+## Lab6
 ### Unity
 Lighting Overview & Lights:
 Point light: Act like a light bulb, sends light out in all directions equally. It light up the scebe based on the location of the point light, the rotation of the light doesn't matter. 
@@ -77,3 +77,8 @@ https://www.shadertoy.com/view/WdlfWl#
 
 Cool project:\
 https://www.shadertoy.com/view/MsSGWK
+
+## Lab7 
+Part 1:
+Video: https://drive.google.com/open?id=1pgWxl3X7Mf1l2dcOwQsG4p9UHIuksJc0
+In the scene, I made the terrain and the water based on the turtoial, and the shader for the green part of the tree is a modified ground shader. I import the objects from the URP example and assect store to make a beach workshop where 2 people trying to make a boat and escape. 
