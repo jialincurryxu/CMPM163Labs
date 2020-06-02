@@ -106,11 +106,11 @@ The example rule:
 ![](lab9/gen1.png) \
 ![](lab9/gen2.png) \
 ![](lab9/gen3.png) \
-![](lab9/gen4.png) \
+![](lab9/gen4.png) 
 
-My own rule: 
+My own rule: \
 F[+FF][-FF]F[-F][+F]F \
 ![](lab9/owngen0.png) \
 ![](lab9/owngen1.png) \
 ![](lab9/owngen2.png) \
-![](lab9/owngen3.png) \
+![](lab9/owngen3.png) 
