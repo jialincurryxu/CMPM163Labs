@@ -99,3 +99,18 @@ My project: \
 For lab8, instead of a modern city with lots of buildings, I went for the idea of a more nature look. I first follow the lab handout to map the perlin noise onto the THREE.js canvas, then I cut off the value lower than a certain point to represent lake area. I also map additional texture and normal map to make it looks real. Then I changed the color of blocks higher than a value to represent snowy mountain, also I changed the shininess of the material. Finally I load in a house I found online and add a warm yellow light to make it looks cool.
 
 My partener did part1 of the lab. He/she went for a futuristic and cartoony style in Unity and the most cool thing I think in the project is that there are a lot of custom model in the project.
+
+## Lab9
+The example rule:
+![](lab9/gen0.png) \
+![](lab9/gen1.png) \
+![](lab9/gen2.png) \
+![](lab9/gen3.png) \
+![](lab9/gen4.png) \
+
+My own rule: 
+F[+FF][-FF]F[-F][+F]F \
+![](lab9/owngen0.png) \
+![](lab9/owngen1.png) \
+![](lab9/owngen2.png) \
+![](lab9/owngen3.png) \
